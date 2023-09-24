@@ -20,7 +20,7 @@
   - This overlay has all usual info not displayed on screen displayed right on the overlay!
 
   ## Installation:
-  To install this overlay, download [StreamCompanion}(https://github.com/Piotrekol/StreamCompanion/releases/tag/v230327.15) by clicking on the Setup.exe file. Then, after installing, put this folder into StreamCompanion\Files\Web\overlays\static\conv. From there, simply use [this link](http://localhost:20727/overlays/static/conv/VictimCrasherCompactDioEdit/) as a browser source in OBS.
+  To install this overlay, download [StreamCompanion](https://github.com/DRCallaghan/VictimCrasherSCOverlayEdit/releases/tag/yep) by clicking on the Setup.exe file. Then, after installing, put this folder into StreamCompanion\Files\Web\overlays\static\conv. From there, simply use [this link](http://localhost:20727/overlays/static/conv/VictimCrasherCompactDioEdit/) as a browser source in OBS.
 
   ## Usage:
   Once properly installed, the pp counter should look like [this](https://i.imgur.com/sWg5LbE.png).
