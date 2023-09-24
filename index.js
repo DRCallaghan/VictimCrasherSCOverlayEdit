@@ -67,9 +67,9 @@ let gameState;
 socket.onmessage = event => {
     let data = event.data;
     if (tempImg !== data.menu.bm.path.full) {
-        tempImg = data.menu.bm.path.full;
-        data.menu.bm.path.full = data.menu.bm.path.full.replace(/#/g, '%23').replace(/%/g, '%25');
-        bg.setAttribute('src', `http://` + location.host + `/Songs/${data.menu.bm.path.full}?a=${Math.random(10000)}`);
+        tempImg = data.menu.bm.path.full
+        let img = data.menu.bm.path.full.replace(/#/g, '%23').replace(/%/g, '%25')
+        bg.setAttribute('src', `http://${window.overlay.config.host}:${window.overlay.config.port}/Songs/${img}?a=${Math.random(10000)}`)
     }
     if (gameState !== data.menu.state) {
         gameState = data.menu.state;
@@ -86,6 +86,7 @@ socket.onmessage = event => {
             ppCont.style.transform = "translateY(100px)";
             mods.style.transform = "translateY(100px)";
             hits.style.transform = "translateY(100px)";
+            maxpp.innerHTML = '';
         }
     }
     if (data.gameplay.pp.current != '') {
@@ -94,11 +95,9 @@ socket.onmessage = event => {
     } else {
         pp.innerHTML = "";
     }
-    if (data.gameplay.pp.maxThisPlay != '') {
-        let ppData = data.gameplay.pp.maxThisPlay;
-        maxpp.innerHTML = Math.round(ppData);
-    } else {
-        pp.innerHTML = "";
+    if (data.menu.bm.time.current <= data.menu.bm.time.firstObj && data.gameplay.pp.maxThisPlay > 0) {
+        let maxppData = data.gameplay.pp.maxThisPlay;
+        maxpp.innerHTML = Math.round(maxppData);
     }
     if (data.gameplay.hits[100] > 0) {
         hun.innerHTML = data.gameplay.hits[100];
