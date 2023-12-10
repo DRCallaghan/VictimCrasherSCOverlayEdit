@@ -130,6 +130,13 @@ socket.onmessage = event => {
     }
     if (data.menu.bm.stats.BPM != tempBpm) {
         tempBpm = data.menu.bm.stats.BPM.max;
+        console.log(data.menu.mods.str);
+        if (data.menu.mods.str.includes('DT') || data.menu.mods.str.includes('NC')) {
+            tempBpm = parseInt(tempBpm) * 1.5;
+        }
+        if (data.menu.mods.str.includes('HT')) {
+            tempBpm = parseInt(tempBpm) * .75;
+        }
         bpm.innerHTML = `${Math.round(tempBpm)}`;
     }
     if (data.menu.bm.stats.SR != tempSr) {
